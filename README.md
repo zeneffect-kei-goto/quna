@@ -20,7 +20,7 @@ git clone git://github.com/zeneffect/quna
 
 ```bash
 cd quna
-mv config.yml.default config.yml
+cp config.yml.default config.yml
 ```
 
 例えば、Kobito アプリ内の記事を会社の Mac と、自宅の Mac で共有したい場合は、git などのバージョン管理システムの配下に記事を保管するディレクトリを作ります。ディレクトリ名は何でも構いません。
@@ -31,9 +31,10 @@ mkdir /Users/you/kobito/articles
 
 そして、そのディレクトリのパスを `config.yml` に記述します。
 
-```yaml
-config:
-  data_dir: !str /Users/you/kobito/articles
+```diff
+  config:
+-   data_dir: !str data
++   data_dir: !str /Users/you/kobito/articles
 ```
 
 これで準備完了です。
