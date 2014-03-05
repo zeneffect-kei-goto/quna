@@ -64,7 +64,7 @@ if ['-h', '--help'].member?($*[0])
   exit
 end
 
-current_dir = File.dirname(File.expand_path(__FILE__))
+current_dir = File.dirname(__FILE__)
 config_path = File.join(current_dir, 'config.yml')
 
 begin
